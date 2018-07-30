@@ -7,9 +7,9 @@
 	var __                = wp.i18n.__; // The __() function for internationalization.
 	var createElement     = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() function to register blocks.
-	var Editable          = wp.blocks.Editable; // For creating editable elements.
-	var BlockControls     = wp.blocks.BlockControls; // For adding control elements.
-	var AlignmentToolbar  = wp.blocks.AlignmentToolbar; // For creating the alignment toolbar element within the control elements.
+	var RichText          = wp.editor.RichText; // For creating editable elements.
+	var BlockControls     = wp.editor.BlockControls; // For adding control elements.
+	var AlignmentToolbar  = wp.editor.AlignmentToolbar; // For creating the alignment toolbar element within the control elements.
 
 	/**
 	 * Register block
@@ -63,7 +63,7 @@
 						)
 					),
 					createElement(
-						Editable,
+						RichText,
 						{
 							tagName: 'p',
 							className: props.className,
