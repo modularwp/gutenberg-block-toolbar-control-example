@@ -39,7 +39,6 @@
 			edit: function( props ) {
 				var content = props.attributes.content;
 				var alignment = props.attributes.alignment;
-				var focus = props.focus;
 
 				function onChangeContent( updatedContent ) {
 					props.setAttributes( { content: updatedContent } );
@@ -50,7 +49,6 @@
 				}
 
 				return [
-					// focus &&
 					createElement(
 						BlockControls,
 						{},
@@ -70,7 +68,6 @@
 							style: { textAlign: alignment },
 							value: content,
 							onChange: onChangeContent,
-							focus: focus,
 							onFocus: props.setFocus
 						},
 					)
