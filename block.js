@@ -50,7 +50,7 @@
 				}
 
 				return [
-					focus &&
+					// focus &&
 					createElement(
 						BlockControls,
 						{},
