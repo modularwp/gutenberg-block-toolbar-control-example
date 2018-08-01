@@ -5,7 +5,7 @@
  */
 ( function() {
 	var __                = wp.i18n.__; // The __() function for internationalization.
-	var el     			  = wp.element.createElement; // The wp.element.createElement() function to create elements.
+	var createElement	  = wp.element.createElement; // The wp.element.createElement() function to create elements.
 	var registerBlockType = wp.blocks.registerBlockType; // The registerBlockType() function to register blocks.
 	var RichText          = wp.editor.RichText; // For creating editable elements.
 	var BlockControls     = wp.editor.BlockControls; // For adding control elements.
@@ -27,7 +27,9 @@
 			category: 'common', // Block category. Group blocks together based on common traits E.g. common, formatting, layout widgets, embed.
 			attributes: {
 				content: {
-					type: 'string',
+		            type: 'array',
+		            source: 'children',
+		            selector: 'p',
 					default: 'Block content can be aligned with toolbar.',
 				},
 				alignment: {
@@ -49,7 +51,7 @@
 				}
 
 				return [
-					el(
+					createElement(
 						BlockControls,
 						{},
 						el(
@@ -60,7 +62,7 @@
 							}
 						)
 					),
-					el(
+					createElement(
 						RichText,
 						{
 							tagName: 'p',
@@ -79,7 +81,7 @@
 				var content = props.attributes.content;
 				var alignment = props.attributes.alignment;
 
-				return el(
+				return createElement(
 					'p',
 					{
 						className: props.className,
