@@ -54,7 +54,7 @@
 					createElement(
 						BlockControls,
 						{},
-						el(
+						createElement(
 							AlignmentToolbar,
 							{
 								value: alignment,
